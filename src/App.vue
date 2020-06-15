@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <router-link>首页</router-link>
-    <router-link>关于</router-link>
+    <router-link to="/home">首页</router-link>
+    <router-link to="/about">关于</router-link>
     <router-view></router-view>
     <!--<div id="headerDiv">
       <mt-header fixed title="固定在顶部" style="height: 120px"></mt-header>
@@ -21,14 +21,6 @@
     }
   }
 </script>
-<!--<script>-->
-<!--  let app = new Vue({-->
-<!--    el: '#app',-->
-<!--    data: {-->
-<!--      selected: true-->
-<!--    }-->
-<!--  })-->
-<!--</script>-->
 
 <style>
   #app {
