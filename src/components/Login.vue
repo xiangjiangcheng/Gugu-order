@@ -3,7 +3,7 @@
     我是登陆页面：
     <br>
     请登录：
-    <p>用户名： <input type="text" name="username"</p>
+    <p>用户名： <input type="text" name="username"></p>
     <p>密码：<input type="password" name="password"></p>
 
     <h1>测试axios请求...</h1>
@@ -17,7 +17,7 @@
   const axios = require('axios');
 
   export default {
-    name: "login", // 这个name没多大意义，也可以不用写
+    name: "Login", // 这个name没多大意义，也可以不用写
     data() { // data 是函数的话，每次创建一个新实例后，调用 data 函数，用return返回初始数据的一个全新副本数据对象，就避免了所有实例共享引用同一个数据对象
       return {
         username: '',
