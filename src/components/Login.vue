@@ -13,37 +13,37 @@
 </template>
 
 <script>
-  // 导入axios
-  const axios = require('axios');
+// 导入axios
+const axios = require('axios')
 
-  export default {
-    name: "Login", // 这个name没多大意义，也可以不用写
-    data() { // data 是函数的话，每次创建一个新实例后，调用 data 函数，用return返回初始数据的一个全新副本数据对象，就避免了所有实例共享引用同一个数据对象
-      return {
-        username: '',
-        password: ''
-      };
-    },
-    methods: {
-      getUserById() {
-        // Make a request for a user with a given ID
-        axios.get('/user?ID=12345')
-          .then(function (response) {
-            // handle success
-            console.log("测试axios------------")
-            console.log(response);
-          })
-          .catch(function (error) {
-            // handle error
-            console.log(error);
-          })
-          .finally(function () {
-            // always executed
-            console.log("finally function. from /user?ID=12345")
-          });
-      }
+export default {
+  name: 'Login', // 这个name没多大意义，也可以不用写
+  data () { // data 是函数的话，每次创建一个新实例后，调用 data 函数，用return返回初始数据的一个全新副本数据对象，就避免了所有实例共享引用同一个数据对象
+    return {
+      username: '',
+      password: ''
+    }
+  },
+  methods: {
+    getUserById () {
+      // Make a request for a user with a given ID
+      axios.get('/user?ID=12345')
+        .then(function (response) {
+          // handle success
+          console.log('测试axios------------')
+          console.log(response)
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error)
+        })
+        .finally(function () {
+          // always executed
+          console.log('finally function. from /user?ID=12345')
+        })
     }
   }
+}
 </script>
 
 <style scoped>

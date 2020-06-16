@@ -55,12 +55,13 @@ request.interceptors.response.use(
     // }
   },
   error => {
-   if(!error.response){
-     let data = {
-       message:"网络异常"
-     }
-     return Promise.reject(data)
-   }
+    if (!error.response) {
+      let data = {
+        message: '网络异常'
+      }
+
+      return Promise.reject(data)
+    }
     return Promise.reject(error.response.data)
   }
 )

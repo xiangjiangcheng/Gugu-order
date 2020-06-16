@@ -8,13 +8,13 @@ import './utils/rem'
 import store from './store'
 import './utils/filters'
 import api from './api'
-import Mint from 'mint-ui';
+import Mint from 'mint-ui'
 
-Vue.prototype.$http = api 
+Vue.prototype.$http = api
 
 Vue.config.productionTip = false
 
-Vue.use(Mint);
+Vue.use(Mint)
 new Vue({
   router,
   store,

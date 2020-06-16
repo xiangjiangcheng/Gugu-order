@@ -10,7 +10,7 @@ module.exports = {
   outputDir: process.env.outputDir || 'dist', // 'dist', 生产环境构建文件的目录
   assetsDir: '', // 相对于outputDir的静态资源(js、css、img、fonts)目录
   lintOnSave: false, // eslint-loader 是否在保存的时候检查
-  runtimeCompiler: true, // 是否使用包含运行时编译器的 Vue 构建版本
+  runtimeCompiler: false, // 是否使用包含运行时编译器的 Vue 构建版本
   productionSourceMap: false, // 生产环境的 source map
   transpileDependencies: [], // 使用babel单独转一些依赖
   // https://cli.vuejs.org/zh/guide/webpack.html#简单的配置方式
@@ -26,7 +26,7 @@ module.exports = {
             output: {
               comments: false
             },
-              compress: {
+            compress: {
               // warnings: false,
               drop_console: true,
               drop_debugger: false,
@@ -37,15 +37,15 @@ module.exports = {
           parallel: true
         })
       )
-      // plugins.push(
-      //   new CompressionWebpackPlugin({
-      //     filename: '[path].gz[query]',
-      //     algorithm: 'gzip',
-      //     test: productionGzipExtensions,
-      //     threshold: 10240,
-      //     minRatio: 0.8
-      //   })
-      // )
+      plugins.push(
+        new CompressionWebpackPlugin({
+          filename: '[path].gz[query]',
+          algorithm: 'gzip',
+          test: productionGzipExtensions,
+          threshold: 10240,
+          minRatio: 0.8
+        })
+      )
       config.plugins = [...config.plugins, ...plugins]
     }
   },
@@ -59,13 +59,13 @@ module.exports = {
       return args
     })
     // // 打包分析
-    // if (process.env.IS_ANALYZ) {
-    //   config.plugin('webpack-report').use(BundleAnalyzerPlugin, [
-    //     {
-    //       analyzerMode: 'static'
-    //     }
-    //   ])
-    // }// 测试环境下使用report打包分析环境
+    if (process.env.IS_ANALYZ) {
+      config.plugin('webpack-report').use(BundleAnalyzerPlugin, [
+        {
+          analyzerMode: 'static'
+        }
+      ])
+    }// 测试环境下使用report打包分析环境
   },
   css: {
     requireModuleExtension: true,

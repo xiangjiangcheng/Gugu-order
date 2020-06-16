@@ -5,14 +5,15 @@
 </template>
 
 <script>
-  export default {
-    mounted() {
-      let el = document.querySelector('.v-modal')
-      if(el) {
-        document.body.removeChild(el)
-      }
+export default {
+  mounted () {
+    let el = document.querySelector('.v-modal')
+
+    if (el) {
+      document.body.removeChild(el)
     }
   }
+}
 </script>
 
 <style lang="less">
