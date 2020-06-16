@@ -1,21 +1,19 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import Login from '../components/Login'
+import routes from './router'
 
 Vue.use(Router)
-
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
-      path: '/login',
-      name: 'Login',
-      component: () => import(/* webpackChunkName: 'ImportFuncDemo' */ '@/components/Login')
-    }
-  ]
+const router = new Router({
+  mode: 'hash',
+  routes
 })
+
+router.beforeEach((to, from, next) => {
+    next()
+})
+
+router.afterEach((to) => {
+
+})
+
+export default router
