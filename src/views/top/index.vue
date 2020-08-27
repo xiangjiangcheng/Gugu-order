@@ -1,6 +1,6 @@
 <template>
     <div>
-      首页
+      微头条
     </div>
 </template>
 

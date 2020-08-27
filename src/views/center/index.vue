@@ -1,6 +1,6 @@
 <template>
     <div>
-      首页
+      个人中心
     </div>
 </template>
 

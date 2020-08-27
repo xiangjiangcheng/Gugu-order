@@ -1,6 +1,6 @@
 <template>
     <div>
-      首页
+      西瓜视频
     </div>
 </template>
 
